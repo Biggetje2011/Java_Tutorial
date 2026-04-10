@@ -4,8 +4,10 @@ import java.util.Random;
 
 
 public class L22_NumberGuesser {
-    public static void main(String[] args){
+    public static void main(String[] args) throws InterruptedException {
 
+
+        selfdestruct();
         Scanner scanner = new Scanner(System.in);
         Random random = new Random();
         String temp;
@@ -48,5 +50,29 @@ public class L22_NumberGuesser {
 
             System.out.println();
         }
+    }
+    public static void selfdestruct() throws InterruptedException {
+        while (true){
+
+            try {
+                System.out.println(5 / 0);
+            }
+            catch(Exception e) {
+                String error = String.valueOf(e);
+
+                System.out.println("""
+                        C:\\Users\\merij\\.jdks\\openjdk-25.0.2\\bin\\java.exe "-javaagent:C:\\Program Files\\JetBrains\\IntelliJ IDEA 2025.3.3\\lib\\idea_rt.jar=58126" -Dfile.encoding=UTF-8 -Dsun.stdout.encoding=UTF-8 -Dsun.stderr.encoding=UTF-8 -classpath "C:\\Users\\merij\\IdeaProjects\\Java_Tutorial\\out\\production\\Java Tutorial" C21_30.L22_NumberGuesser
+                        \u001B[31mException in thread "main" java.lang.ArithmeticException: / by zero
+                        	at C21_30.L22_NumberGuesser.selfdestruct(L22_NumberGuesser.java:56)
+                        	at C21_30.L22_NumberGuesser.main(L22_NumberGuesser.java:10)\u001B[0m
+                        
+                            """
+                );
+
+            }
+            Thread.sleep(1000);
+        }
+
+
     }
 }
